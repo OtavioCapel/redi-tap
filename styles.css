@@ -1,0 +1,94 @@
+
+:root {    
+    --black-primary: #1e2329;
+    --blue-primary: #3169ff;
+    --white: #ffffff;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    background-color: var(--black-primary);
+}
+
+.loader img {
+    min-width: 70%;
+    animation-name: loader-animation;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+}
+
+.loader {
+    flex-direction: column;
+}
+
+/* .progress-bar {
+    margin-top: 1.5rem;
+    width: 75%;
+    height: 1rem;
+    background-color: var(--blue-primary);
+} */
+.show {
+    visibility: visible !important;
+}
+.main {
+    visibility: hidden;
+}
+
+@keyframes loader-animation {
+    25% {opacity: .5;}
+    50% {opacity: 1;}
+    75% {opacity: .5;}
+    100% {opacity: 1;}
+}
+
+section.main, .loader {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main::before {
+    content: " ";
+    background: url(assets/phones.webp) no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    opacity: .75;
+}
+
+.trade-now-btn {
+    cursor: pointer;
+    background-image: linear-gradient(to right, #87CEFA 0%, #1E90FF 51%, var(--blue-primary) 100%);
+    border: unset;
+    min-height: 5rem;
+    color: var(--black-primary);
+    background-size: 200% auto;
+    min-width: 60%;
+    font-size: 5rem;
+    padding: 2rem;
+    border-radius: 10px;
+    transition: 0.5s;
+    position: relative;
+}
+
+.trade-now-btn:hover {
+    background-position: right center;
+}
+
+.d-flex-arround {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
